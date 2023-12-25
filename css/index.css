@@ -1,0 +1,139 @@
+* {
+padding: 0;
+margin: 0;
+font-family: sans-serif;
+box-sizing: border-box;
+}
+ul a,
+.logo {
+    text-decoration: none;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(#111,#222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: red;
+    width: 100% ;
+    height: 100% ;
+    clip-path:circle(40% at right 70%) ;
+}
+.contaner {
+    width: 80%;
+    height: 80%;
+    background-color: rgba(255, 255, 255,0.1 );
+    border-radius:20px ;
+    -webkit-border-radius:20px ;
+    -moz-border-radius:20px ;
+    -o-border-radius:20px ;
+    overflow: hidden;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding: 20px 0;
+    margin: auto;
+    width: 80%;
+}
+nav .logo {
+    font-size: 35px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: auto 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+nav ul li {
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+} 
+nav ul li a {
+    color: white;
+}
+nav ul li a::before {
+    content: "";
+    transition: 0.3s;
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: red;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+nav ul a:hover::before {
+left: 0px;
+}
+.content {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.text {
+    width: 40%;
+}
+.text h2 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.text > p { 
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 25px;
+    margin: 10px 0;
+} 
+.imag {
+    width: 40%;
+}
+.imag img {
+    width: 400px;
+}
+@media (min-width:950px) and (max-width:1150px) {
+    .content .imag img {
+        width: 330px;
+    }
+}
+@media (max-width:950px) {
+    nav,.content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+    }
+@media (max-width:950px) {
+    .content .text, .content .imag {
+        width: 80%;
+    }
+    }
+   
+    @media (max-width:950px){
+        body::after {
+            clip-path: circle(50% at bottom);
+            }
+    }
+    
